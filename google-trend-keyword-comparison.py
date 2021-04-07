@@ -12,5 +12,16 @@ trend_obj = TrendReq()
 trend_obj.build_payload(kw_list = [keyword1, keyword2], timeframe=period)
 trend_df = trend_obj.interest_over_time()
 
-# 그래
+# 그래프 출력
+plt.style.use("ggplot")
+plt.figure(figsize=(14,5))
+trend_df[keyword1].plot()
+trend_df[keyword2].plot()
+plt.title("Google Trends: %s vs. %s" % (keyword1, keyword2), size=15)
+plt.legend(loc="best")
 
+# 그래프 파일 저장
+cwd = os.getcwd()
+output_filepath = os.path.join(cwd, "output", 'google_trend_%s_vs_%s.png' % (keyword1, keyword2))
+plt.savefig(output_filepath, dpi=300)
+plt.show()
