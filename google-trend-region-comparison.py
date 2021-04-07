@@ -15,3 +15,9 @@ trend_df = trend_obj.interest_by_region().sort_values(by= keyword, ascending=Fal
 print(trend_df.head())
 
 # 그래프 출력하기
+plt.style.use("ggplot")
+plt.figure(figsize= (14,10))
+trend_df.loc[:50, :][keyword].plot(kind='bar')
+plt.title("Google Trends by Region", size = 15)
+plt.legend(labels = [keyword], loc="upper right")
+
