@@ -34,3 +34,7 @@ plt.title("Google Trends by Region", size=15)
 plt.legend(labels=[new_keyword], loc="upper right")
 
 # 그래프 파일 저장
+cwd = os.getcwd()
+output_filepath = os.path.join(cwd, "output", "google_trend_by_region_%s.png" % new_keyword)
+plt.savefig(output_filepath, dpi=300)
+plt.show()
