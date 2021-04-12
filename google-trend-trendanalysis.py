@@ -1,1 +1,1 @@
-from pytrends
+from pytrends.request import TrendReq
