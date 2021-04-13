@@ -22,7 +22,7 @@ trend_obj.build_payload(kw_list=[new_keyword], timeframe=period)
 # 상위 30개 지역을 선택
 trend_df = trend_obj.interest_by_region()
 print(trend_df.head())
-trend_top30 = trend_df.sort_values(by=new_keyword, asscending=False).head(30)
+trend_top30 = trend_df.sort_values(by=new_keyword, ascending=False).head(30)
 print(trend_top30.head())
 print("\n")
 
